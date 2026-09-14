@@ -14,7 +14,7 @@ def keyboard_listener(path_var, key_var, root):
     key = key_var.get()
 
     if key == "":
-        root.after(1, lambda: keyboard_listener(path_var, key_var, root))
+        root.after(100, lambda: keyboard_listener(path_var, key_var, root))
         return 
 
     #print("checking key:", repr(key))  # add this
@@ -23,5 +23,8 @@ def keyboard_listener(path_var, key_var, root):
      os.startfile(path)
      if kb.is_pressed(key):
         time.sleep(cooldown)
-    root.after(1, lambda: keyboard_listener(path_var, key_var, root))
-  
+    root.after(100, lambda: keyboard_listener(path_var, key_var, root))
+
+
+
+#
