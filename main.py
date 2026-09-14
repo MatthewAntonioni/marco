@@ -4,17 +4,7 @@ import keyboard as kb
 import time
 from tkinter import *
 from tkinter import ttk
-
-def keyboard_listener():
-
-    cooldown = 2
-
-    path = path_var.get()
-    if kb.is_pressed("delete"):       
-     os.startfile(path)
-     if kb.is_pressed("delete"):
-        time.sleep(cooldown)
-    root.after(1, keyboard_listener)
+import ui
 
 root = tk.Tk()
 root.title("macro manager")
@@ -26,10 +16,12 @@ path_var = tk.StringVar()
 path_var.entry = ttk.Entry(mainFrame, width=20, textvariable=path_var)
 path_var.entry.grid(column=1, row=1, sticky=(W, E))
 
-entry = ttk.Entry(mainFrame, width=20)
-entry.grid(column=1, row=2, sticky=(W, E))
+key_var = tk.StringVar()
+key_var.entry = ttk.Entry(mainFrame, width=20, textvariable=key_var)
+key_var.entry.grid(column=2, row=1, sticky=(W, E))
 
-keyboard_listener()
+
+ui.keyboard_listener(path_var, key_var, root)
 root.mainloop()
 
 #make UI nice to look at
