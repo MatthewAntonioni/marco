@@ -1,6 +1,7 @@
 from ctypes import windll
 import keyboard as kb
 
+
 SPECIAL_KEYS = {
     'delete': 0x2E,
     'backspace': 0x08,
@@ -44,9 +45,6 @@ def char_to_vk(char):
         return None
     return result & 0xFF
 
-key = input("enter key:")
-
-print(char_to_vk(key))
 
 
 

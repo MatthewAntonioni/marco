@@ -5,13 +5,15 @@ import keyboard as kb
 import time
 from tkinter import *
 from tkinter import ttk
-
+import test3
 def keyboard_listener(path_var, key_var, root):
 
     cooldown = 2
 
     path = path_var.get()
     key = key_var.get()
+
+    test3.char_to_vk(key) 
 
     if key == "":
         root.after(100, lambda: keyboard_listener(path_var, key_var, root))

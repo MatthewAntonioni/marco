@@ -5,6 +5,7 @@ import time
 from tkinter import *
 from tkinter import ttk
 import ui
+import test3
 
 root = tk.Tk()
 root.title("macro manager")
